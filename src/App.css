@@ -1,0 +1,13 @@
+.NavbarRow {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: space-evenly;
+}
+
+.row {
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+	align-content: center;
+}

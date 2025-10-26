@@ -1,0 +1,16 @@
+s {
+	color: red;
+}
+em {
+	color: green;
+	font-size: 20px;
+	font-weight: 80px;
+}
+.productImage {
+	height: 171px;
+	width: 171px;
+}
+
+.button {
+	width: 250px;
+}

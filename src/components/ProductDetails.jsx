@@ -9,24 +9,31 @@ import DeleteProduct from "./DeleteProduct";
 import EditProduct from "./EditProduct";
 
 function ProductDetails() {
+  const storage =
+    localStorage.getItem("count") === 0
+      ? 0
+      : parseInt(localStorage.getItem("count"));
+  const [count, setCount] = useState(storage || 0);
   const [product, setProduct] = useState({});
   const price = checkPrice(`${product.price}`);
   let params = useParams();
+  const id = params.id.split(":")[1]
 
   const addedToCart = () => {
-    alert("Product Added to Cart!");
+    setCount(+count + 1);
+    localStorage.setItem("count", count + 1);
   };
 
   useEffect(() => {
     axios
-      .get(`https://fakestoreapi.com/products/${params.id.split(":")[1]}`)
+      .get(`https://fakestoreapi.com/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.error(err));
   }, []);
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar count={count} />
       <hr />
       <h1>{product.title}</h1>
       <Image className="productImage" src={product.image} />
@@ -53,8 +60,8 @@ function ProductDetails() {
       >
         Add to Cart
       </Button>
-      <DeleteProduct />
-      <EditProduct product={product} />
+      <DeleteProduct id={id} />
+      <EditProduct product={product} id={id} />
     </>
   );
 }

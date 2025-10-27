@@ -11,3 +11,45 @@
 	align-items: center;
 	align-content: center;
 }
+
+.cart {
+	height: 4%;
+	width: 4%;
+	right: 0;
+	position: fixed;
+	float: right;
+}
+
+.form {
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.button {
+	margin: 0 auto;
+	width: 250px;
+	text-align: center;
+}
+
+.productImage {
+	height: 171px;
+	width: 171px;
+}
+
+s {
+	color: red;
+}
+em {
+	color: green;
+	font-size: 20px;
+	font-weight: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+	.buttonDetails {
+		position: relative;
+		margin-top: 300px;
+		bottom: 1;
+	}
+}
